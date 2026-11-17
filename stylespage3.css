@@ -1,0 +1,180 @@
+/*
+  goat-styles.css
+  Static (fixed-width) layout for the "My GOAT" page
+  Theme: black and light green
+*/
+
+/*  Colors */
+:root {
+  --black: #0a0a0a;
+  --charcoal: #181818;
+  --charcoal-light: #262626;
+  --green: #8dffa8;
+  --green-dark: #4fcf70;
+  --green-deep: #1f6b35;
+  --text: #e9f7ec;
+}
+
+/*  Static page layout  */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--black);
+}
+
+body {
+  /* Fixed width so nothing changes or resizes  */ 
+  width: 960px;
+  margin: 0 auto;
+  padding: 0 0 40px 0;
+  font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text);
+  background-color: var(--charcoal);
+  border-left: 2px solid var(--green-deep);
+  border-right: 2px solid var(--green-deep);
+  box-shadow: 0 0 24px rgba(141, 255, 168, 0.25);
+}
+
+/* Keeps the background behind images */
+body::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*  Centered navigation bar */
+header {
+  width: 956px;
+  background-color: var(--black);
+  border-bottom: 4px solid var(--green);
+  margin-bottom: 30px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 14px 0;
+  text-align: center;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 8px;
+  padding: 0;
+}
+
+nav li::marker {
+  content: "";
+}
+
+nav a {
+  display: block;
+  padding: 8px 22px;
+  font-weight: bold;
+  color: var(--green);
+  text-decoration: none;
+  background-color: var(--charcoal);
+  border: 2px solid var(--green);
+  border-radius: 4px;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--black);
+  background-color: var(--green);
+}
+
+/*  Style element 1: h1  */
+h1 {
+  margin: 0 40px 20px 40px;
+  padding-bottom: 12px;
+  font-size: 40px;
+  text-align: center;
+  color: var(--green);
+  border-bottom: 3px solid var(--green-deep);
+  text-shadow: 0 0 12px rgba(141, 255, 168, 0.5);
+}
+
+/*  Style element 2: h2  */
+h2 {
+  clear: both;
+  margin: 30px 40px 14px 40px;
+  padding: 6px 14px;
+  font-size: 24px;
+  color: var(--black);
+  background-color: var(--green);
+  border-left: 10px solid var(--green-dark);
+}
+
+/*  Style element 3: paragraphs  */
+p {
+  margin: 12px 40px;
+  padding: 12px 18px;
+  text-align: left;
+  color: var(--text);
+  background-color: var(--charcoal-light);
+  border: 1px solid var(--green-deep);
+  border-left: 5px solid var(--green);
+}
+
+/*  Style element 4: images  */
+img {
+  max-width: 100%;
+  height: auto;
+  padding: 6px;
+  background-color: var(--black);
+  border: 2px solid var(--green);
+  box-shadow: 0 0 14px rgba(141, 255, 168, 0.35);
+}
+
+/* Images with class="imageR" float to the right of the text */
+.imageR {
+  float: right;
+  width: 300px;
+  margin: 12px 40px 16px 20px;
+}
+
+/* An image placed directly under a heading is centered */
+h2 + .imageR {
+  float: none;
+  display: block;
+  width: 400px;
+  margin: 12px auto 16px auto;
+}
+
+/*  Style element 5: video (iframe)  */
+iframe {
+  display: block;
+  width: 560px;
+  height: 315px;
+  margin: 16px auto;
+  background-color: var(--black);
+  border: 3px solid var(--green);
+  box-shadow: 0 0 14px rgba(141, 255, 168, 0.35);
+}
+
+/*  Links and lists */
+a {
+  color: var(--green);
+}
+
+a:hover,
+a:focus {
+  color: var(--green-dark);
+}
+
+body > ul {
+  margin: 8px 40px;
+  padding: 12px 20px 12px 42px;
+  list-style-type: square;
+  background-color: var(--charcoal-light);
+  border: 1px solid var(--green-deep);
+}
+
+body > ul li::marker {
+  color: var(--green);
+}
