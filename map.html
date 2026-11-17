@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Map</title>
+    <link rel="stylesheet" href="stylesmap.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Homepage</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="page3.html">Video Profile</a></li>
+          <li><a href="map.html">Map</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h1>My Map</h1>
+    <p>These are some of the places I went to for my education. You can click a pin to learn more, pick a place from the list to go there, or click anywhere on the map to drop your own pin.</p>
+
+    <div class="controls">
+      <label for="placeSelect">Go to:</label>
+      <select id="placeSelect">
+        <option value="">Choose a place...</option>
+      </select>
+      <button type="button" id="clearBtn">Clear My Pins</button>
+      <button type="button" id="questionsBtn">Questions</button>
+    </div>
+
+    <p id="mapStatus" role="status">Loading map...</p>
+    <div id="map" aria-label="Google map of places from my education"></div>
+
+    <!-- Deferred scripts run in order, so script.js (in the head) defines initMap before Google calls it -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBM1F-BpX660SBK3-Vw9O9f7AEvTAIH8rI&callback=initMap" defer></script>
+  </body>
+</html>
